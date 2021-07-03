@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Hi+Melody&family=Itim&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Hi+Melody&family=Itim&display=swap" rel="stylesheet">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</head>
+
+
+<div class="new_box" style="font-family: 'Ubuntu', sans-serif; background: #F5F4F2;">
+<h1 class="alert-heading">Creating Vote</h1>
+
+<form action="{% url 'create' %}" method="post">
+    <p>{% csrf_token %}
+    {{ form.as_p }}
+   후보 1 : <input type = "text" name="hashtags" placeholder="제목"></p>
+   후보 2 : <input type = "text" name="hashtags" placeholder="제목"></p>
+
+    <hr>
+    <div class="options">
+    <p>특정 사용자에게만 나의 투표를 노출합니다</p>
+    
+    <div style="display: flex;">
+    <p>성별 : </p>
+    <select name="sex" style="margin-left: 10px;">
+        <option value="">여성</option>
+        <option value="회사원" selected="selected">남성</option>
+        <option value="기타">선택안함</option>
+    </select> </div>
+
+    
+    <div style="display: flex;">
+    <p>직업 :</p>
+    <select name="job" style="margin-left: 10px;">
+        <option value="학생">학생</option>
+        <option value="학생">전업주부</option>
+        <option value="회사원" selected="selected">직장인</option>
+        <option value="기타">선택안함</option>
+    </select>
+    </div>
+    
+
+    <div style="display: flex;">
+    <p>나이 : </p>
+    <select name="age" style="margin-left: 10px;">
+        <option value="학생">10대</option>
+        <option value="회사원" selected="selected">20대</option>
+        <option value="기타">30대</option>
+        <option value="기타">40~60대</option>
+        <option value="기타">선택안함</option>
+    </select>
+    </div>
+
+
+
+    </div>
+
+
+    <hr>
+
+    <button class="btn btn-secondary" type="submit" style="margin-left: 10px; margin-bottom: 10px; padding: 5px 15px;">제출</button>
+
+    
+
+</form>
+
+
+</div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div style="background-color:  #DCBA94; width: 500px; height: 300px;" >
+    <h1 style="color: ivory;">Hello, My Page!</h1>
+            
+        {% if user.is_authenticated%}
+        <ul style=" list-style: none;">
+            
+            <li>1. 이름 : {{user.username}}  </li>
+            <li>2. 나이:{{user.age}}  </li>
+            <li>3. 성별:{{user.gender}} </li>
+            <li>4. 직업 :{{user.job}} </li>
+            <li>5. 문의</li>
+            <li>5. 탈퇴</li>
+        </ul>
+
+
+        {% else %}
+        <h2>로그인 하지 않았습니다.</h2>
+        {% endif %}
+
+</div>
+
+   
+</body>
+</html>
